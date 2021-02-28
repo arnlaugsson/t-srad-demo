@@ -1,4 +1,5 @@
 # t-srad-bank
+
 A starting point for a TDD exercise.
 
 ## Getting started
@@ -9,7 +10,24 @@ Given a modal of a bank system for the T-SRAD Bank; your task is to take the mod
 
 Don't worry, you are part of a larger team tasked with the job. You will only be working on the Account module, and while others are working on the other modules, you can ignore their work for now.
 
+### Running tests locally
+
+#### Easy way
+
+1. You will need to have pytest installed, see more info on the [pytest site][0].
+2. To run the tests, simply type: ``pytest -v`` in the root of the project.
+
+#### Cleaner way
+
+Use a virtual environment to keep track of your requirement files.
+
+1. Run ``python -m venv .venv``
+2. Run ``source .venv\bin\activate\ `` on MacOS/Linux, or ``.venv/Scripts/activate.bat`` on Windows.
+3. Install requirements: ``pip install -r requirements.txt``
+4. Run ``pytest -v`` to run tests.
+
 ### Step by step directions
+
 1. Locally on your computer, run the following commands:
     - ``git init t-srad-bank``
     - ``cd t-srad-bank``
@@ -36,6 +54,7 @@ For <ins>each step</ins>:
 
 After all steps (or as often as you'd like), push the code to your GitHub repo. [Add @arnlaugsson as a collaborator to the repository before the deadline.][2]
 
+[0]: https://docs.pytest.org/en/stable/getting-started.html
 [1]: https://www.codecademy.com/articles/tdd-red-green-refactor
 [2]: https://docs.github.com/en/github/setting-up-and-managing-your-github-user-account/inviting-collaborators-to-a-personal-repository
 
@@ -65,13 +84,15 @@ We provided the first step to help get you started. Also, we've provided some te
 9. Update the transfer function to prevent account balances from going below 0.0, and trying to transfer more than the balance allows should raise an ``IllegalTransfer`` exception.
 10. For the final part, choose _either_ A) or B) below:
     - A) Implement a transactional history for every account. The transaction history should keep track of all events that have happened to the account. (Hint; you will need to add event storing into each event function, such as the constructor and deposit.) Example:
-      ```
+
+      ```csv
       event, amount, balance
       create, 0.0, 0.0
       deposit, 150.0, 150.0
       withdraw, 35.0, 115.0
       transfer, 25.0, 90.0
       ```
+
     - B) Implement a class function that can give the sum of all account balances when called. (Hint: you will need to keep track of all created accounts and sum up their balances on demand).
 
 If you get stuck on a step, you can choose to skip it and move on to the next, but make sure to comment on the commit which step you are working on, so it will be clear if you add it later.
