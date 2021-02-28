@@ -130,3 +130,5 @@ dmypy.json
 
 # Generated images by PlantUML
 .out/
+
+.vscode/
