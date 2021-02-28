@@ -1,0 +1,5 @@
+{
+    "plantuml.render": "PlantUMLServer",
+    "plantuml.server": " https://www.plantuml.com/plantuml",
+    "python.pythonPath": "/home/codespace/workspace/t-srad-bank/.venv/bin/python3"
+}

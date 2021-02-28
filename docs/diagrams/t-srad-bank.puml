@@ -1,0 +1,87 @@
+@startuml T-SRAD-Bank
+hide empty description
+hide empty members
+title T-SRAD Bank
+
+package T-SRAD-Bank {
+    class Branch {
+        id: int {unique}
+    }
+    class Logger {
+        monitorAccess()
+    }
+    class Employee {
+        employeeId: str
+        viewAccount(account)
+    }
+    class Account {
+        number: int {unique}
+        procurationHolder: Individual[]
+        interestRate: float
+        transactionHistory: transaction[1..*]
+        /id: string
+        /<u>totalBalance: float
+        --
+        calculateMonthlyInterests()
+        calculateYearlyInterests()
+        deposit(amount)
+        withdraw(amount)
+        transfer(Account, amount)
+    }
+    note as N1
+    <i>Account::id</i> is formatted as
+    {branch}-{type}-{number}
+    -> example: 0515-2-000343
+    end note
+    enum AccountType {
+        CheckingAccount
+        SavingsAccount
+    }
+    class Loan {
+        upPayFee: Percentage
+        initialAmount: float
+        numberOfPayments: int
+        interest: float
+        --
+        calculatePayments()
+    }
+    enum LoanType {
+        CarLoan
+        HousingLoan
+        RenevationLoan
+    }
+    abstract Owner {
+        ssn: str
+        email: Email[1..*]
+        telephone: Telephone[1..*]
+        makeLoanPayment(Loan, amount)
+        payUpLoan(Loan)
+        seeAccountStatus(Account)
+        seeLoanStatus(Loan)
+    }
+    class Individual {
+        name: str
+        overdraftTotalAllowance: float
+        --
+        applyForAnOverdraft(account, amount)
+    }
+    class Company {
+        entityName: str
+        contact: Individual[1..*]
+    }
+
+    Branch "1" o-- Account
+    Logger ..> Employee
+    Account ..> "1" AccountType
+    N1 -- Account
+    Branch "1" o-- "1..*" Employee
+    Branch "1" o-- Loan
+    Loan ..> "1" LoanType
+    Loan -- "[1..2]" Owner
+    Owner <|-- Individual
+    Employee --|> Individual
+    Owner <|-- Company
+    Account -- "1" Owner
+    Individual - Company : CEO
+}
+@enduml
