@@ -1,6 +1,6 @@
 # t-srad-bank
 
-A starting point for a TDD exercise.
+A starting point for a TDD exercise. Inspired by the Banking Kata from [Kata Log][1].
 
 ## Getting started
 
@@ -14,7 +14,7 @@ Don't worry, you are part of a larger team tasked with the job. You will only be
 
 #### Easy way
 
-1. You will need to have pytest installed, see more info on the [pytest site][0].
+1. You will need to have pytest installed, see more info on the [pytest site][2].
 2. To run the tests, simply type: ``pytest -v`` in the root of the project.
 
 #### Cleaner way
@@ -40,7 +40,7 @@ Use a virtual environment to keep track of your requirement files.
 
 ### TDD instructions
 
-Follow the [Red-Green-Refactor][1] mantra to the fullest. If we see examples where we have functionality changes without tests, that will incur a grading penalty!
+Follow the [Red-Green-Refactor][3] mantra to the fullest. If we see examples where we have functionality changes without tests, that will incur a grading penalty!
 
 Read through all the tasks, but when you are implementing, do only one step at a time.
 
@@ -52,11 +52,12 @@ For <ins>each step</ins>:
 4. Review changes, refactor if needed (**Refactor**).
 5. Add the changes (``git add``), commit the changes with a descriptive commit message (``git commit -m "step 2: accept float amount"``).
 
-After all steps (or as often as you'd like), push the code to your GitHub repo. [Add @arnlaugsson as a collaborator to the repository before the deadline.][2]
+After all steps (or as often as you'd like), push the code to your GitHub repo. [Add @arnlaugsson as a collaborator to the repository before the deadline.][4]
 
-[0]: https://docs.pytest.org/en/stable/getting-started.html
-[1]: https://www.codecademy.com/articles/tdd-red-green-refactor
-[2]: https://docs.github.com/en/github/setting-up-and-managing-your-github-user-account/inviting-collaborators-to-a-personal-repository
+[1]: https://kata-log.rocks/banking-kata
+[2]: https://docs.pytest.org/en/stable/getting-started.html
+[3]: https://www.codecademy.com/articles/tdd-red-green-refactor
+[4]: https://docs.github.com/en/github/setting-up-and-managing-your-github-user-account/inviting-collaborators-to-a-personal-repository
 
 ### TDD kata steps
 
