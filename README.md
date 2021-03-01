@@ -22,7 +22,7 @@ Don't worry, you are part of a larger team tasked with the job. You will only be
 Use a virtual environment to keep track of your requirement files.
 
 1. Run ``python -m venv .venv``
-2. Run ``source .venv\bin\activate\ `` on MacOS/Linux, or ``.venv/Scripts/activate.bat`` on Windows.
+2. Run ``source .venv\bin\activate`` on MacOS/Linux, or ``.venv/Scripts/activate.bat`` on Windows.
 3. Install requirements: ``pip install -r requirements.txt``
 4. Run ``pytest -v`` to run tests.
 
