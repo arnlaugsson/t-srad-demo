@@ -20,3 +20,8 @@ def test_number_of_accounts_increases_on_creation(two_accounts):
     assert Account.numberOfAccounts == 2
 
 # Write your tests below here.
+
+def test_initial_amount_is_set_on_account_creation():
+    initial_amount = 300.0
+    account = Account(initial_amount)
+    assert account.balance == initial_amount
